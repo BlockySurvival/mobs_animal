@@ -86,7 +86,7 @@ if minetest.get_modpath("ethereal") then
 	spawn_on_kitten = "ethereal:grove_dirt"
 end
 config.spawn_enabled_kitten = true
-config.spawn_on_kitten = {spawn_on_kitten},
+config.spawn_on_kitten = {spawn_on_kitten}
 config.spawn_near_kitten = {"group:grass"}
 config.spawn_min_light_kitten = 14
 config.spawn_max_light_kitten = nil
