@@ -213,21 +213,6 @@ mobs:register_egg("mobs_animal:sheep_"..col[1], S("@1 Sheep", col[2]), "wool_"..
 end
 
 
-if not mobs.custom_spawn_animal then
-mobs:spawn({
-	name = "mobs_animal:sheep_white",
-	nodes = {"default:dirt_with_grass", "ethereal:green_dirt"},
-	neighbors = {"group:grass"},
-	min_light = 14,
-	interval = 60,
-	chance = 8000, -- 15000
-	min_height = 0,
-	max_height = 200,
-	day_toggle = true,
-})
-end
-
-
 mobs:alias_mob("mobs:sheep", "mobs_animal:sheep_white") -- compatibility
 
 -- raw mutton

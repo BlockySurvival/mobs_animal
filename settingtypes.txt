@@ -1,0 +1,330 @@
+
+# Enable or disable the natural spawning of the bee mob
+mobs_animal.bee.spawn.enabled (Enable bee spawning) bool true
+
+# List of nodenames that the bee mob can spawn on top of
+mobs_animal.bee.spawn.on (Nodes the bee will spawn on) string group:soil,group:stone
+
+# List of nodenames that the bee mob can spawn beside
+mobs_animal.bee.spawn.near (Nodes the bee will spawn near) string air
+
+# Interval in seconds that specifies when the bee mob will try to spawn
+mobs_animal.bee.spawn.interval (Time between bee spawning) int 30 1
+
+# Inverted chance for an bee to spawn on a given node
+mobs_animal.bee.spawn.chance (Rarity of bee spawning) int 5000 1
+
+# The minimum light level the bee mob can spawn at
+mobs_animal.bee.spawn.min_light (Min. light level for bee spawning) int 0 0
+
+# The maximum light level the bee mob can spawn at
+mobs_animal.bee.spawn.max_light (Max. light level for bee spawning) int 15 0
+
+# The minimum height the bee mob can spawn at
+mobs_animal.bee.spawn.min_height (Min. world height for bee spawning) int -31000 -31000 31000
+
+# The maximum height the bee mob can spawn at
+mobs_animal.bee.spawn.max_height (Max. world height for bee spawning) int 31000 -31000 31000
+
+# Number of bee mobs to spawn at one time inside map area
+mobs_animal.bee.spawn.active_object_count (Number of bees in the same place) int 1 1
+
+
+
+
+# Enable or disable the natural spawning of the bunny mob
+mobs_animal.bunny.spawn.enabled (Enable bunny spawning) bool true
+
+# List of nodenames that the bunny mob can spawn on top of
+mobs_animal.bunny.spawn.on (Nodes the bunny will spawn on) string group:soil,group:stone
+
+# List of nodenames that the bunny mob can spawn beside
+mobs_animal.bunny.spawn.near (Nodes the bunny will spawn near) string air
+
+# Interval in seconds that specifies when the bunny mob will try to spawn
+mobs_animal.bunny.spawn.interval (Time between bunny spawning) int 30 1
+
+# Inverted chance for an bunny to spawn on a given node
+mobs_animal.bunny.spawn.chance (Rarity of bunny spawning) int 5000 1
+
+# The minimum light level the bunny mob can spawn at
+mobs_animal.bunny.spawn.min_light (Min. light level for bunny spawning) int 0 0
+
+# The maximum light level the bunny mob can spawn at
+mobs_animal.bunny.spawn.max_light (Max. light level for bunny spawning) int 15 0
+
+# The minimum height the bunny mob can spawn at
+mobs_animal.bunny.spawn.min_height (Min. world height for bunny spawning) int -31000 -31000 31000
+
+# The maximum height the bunny mob can spawn at
+mobs_animal.bunny.spawn.max_height (Max. world height for bunny spawning) int 31000 -31000 31000
+
+# Number of bunny mobs to spawn at one time inside map area
+mobs_animal.bunny.spawn.active_object_count (Number of bunnys in the same place) int 1 1
+
+
+
+
+
+# Enable or disable the natural spawning of the chicken mob
+mobs_animal.chicken.spawn.enabled (Enable chicken spawning) bool true
+
+# List of nodenames that the chicken mob can spawn on top of
+mobs_animal.chicken.spawn.on (Nodes the chicken will spawn on) string group:soil,group:stone
+
+# List of nodenames that the chicken mob can spawn beside
+mobs_animal.chicken.spawn.near (Nodes the chicken will spawn near) string air
+
+# Interval in seconds that specifies when the chicken mob will try to spawn
+mobs_animal.chicken.spawn.interval (Time between chicken spawning) int 30 1
+
+# Inverted chance for an chicken to spawn on a given node
+mobs_animal.chicken.spawn.chance (Rarity of chicken spawning) int 5000 1
+
+# The minimum light level the chicken mob can spawn at
+mobs_animal.chicken.spawn.min_light (Min. light level for chicken spawning) int 0 0
+
+# The maximum light level the chicken mob can spawn at
+mobs_animal.chicken.spawn.max_light (Max. light level for chicken spawning) int 15 0
+
+# The minimum height the chicken mob can spawn at
+mobs_animal.chicken.spawn.min_height (Min. world height for chicken spawning) int -31000 -31000 31000
+
+# The maximum height the chicken mob can spawn at
+mobs_animal.chicken.spawn.max_height (Max. world height for chicken spawning) int 31000 -31000 31000
+
+# Number of chicken mobs to spawn at one time inside map area
+mobs_animal.chicken.spawn.active_object_count (Number of chickens in the same place) int 1 1
+
+
+
+
+# Enable or disable the natural spawning of the cow mob
+mobs_animal.cow.spawn.enabled (Enable cow spawning) bool true
+
+# List of nodenames that the cow mob can spawn on top of
+mobs_animal.cow.spawn.on (Nodes the cow will spawn on) string group:soil,group:stone
+
+# List of nodenames that the cow mob can spawn beside
+mobs_animal.cow.spawn.near (Nodes the cow will spawn near) string air
+
+# Interval in seconds that specifies when the cow mob will try to spawn
+mobs_animal.cow.spawn.interval (Time between cow spawning) int 30 1
+
+# Inverted chance for an cow to spawn on a given node
+mobs_animal.cow.spawn.chance (Rarity of cow spawning) int 5000 1
+
+# The minimum light level the cow mob can spawn at
+mobs_animal.cow.spawn.min_light (Min. light level for cow spawning) int 0 0
+
+# The maximum light level the cow mob can spawn at
+mobs_animal.cow.spawn.max_light (Max. light level for cow spawning) int 15 0
+
+# The minimum height the cow mob can spawn at
+mobs_animal.cow.spawn.min_height (Min. world height for cow spawning) int -31000 -31000 31000
+
+# The maximum height the cow mob can spawn at
+mobs_animal.cow.spawn.max_height (Max. world height for cow spawning) int 31000 -31000 31000
+
+# Number of cow mobs to spawn at one time inside map area
+mobs_animal.cow.spawn.active_object_count (Number of cows in the same place) int 1 1
+
+
+
+
+
+# Enable or disable the natural spawning of the kitten mob
+mobs_animal.kitten.spawn.enabled (Enable kitten spawning) bool true
+
+# List of nodenames that the kitten mob can spawn on top of
+mobs_animal.kitten.spawn.on (Nodes the kitten will spawn on) string group:soil,group:stone
+
+# List of nodenames that the kitten mob can spawn beside
+mobs_animal.kitten.spawn.near (Nodes the kitten will spawn near) string air
+
+# Interval in seconds that specifies when the kitten mob will try to spawn
+mobs_animal.kitten.spawn.interval (Time between kitten spawning) int 30 1
+
+# Inverted chance for an kitten to spawn on a given node
+mobs_animal.kitten.spawn.chance (Rarity of kitten spawning) int 5000 1
+
+# The minimum light level the kitten mob can spawn at
+mobs_animal.kitten.spawn.min_light (Min. light level for kitten spawning) int 0 0
+
+# The maximum light level the kitten mob can spawn at
+mobs_animal.kitten.spawn.max_light (Max. light level for kitten spawning) int 15 0
+
+# The minimum height the kitten mob can spawn at
+mobs_animal.kitten.spawn.min_height (Min. world height for kitten spawning) int -31000 -31000 31000
+
+# The maximum height the kitten mob can spawn at
+mobs_animal.kitten.spawn.max_height (Max. world height for kitten spawning) int 31000 -31000 31000
+
+# Number of kitten mobs to spawn at one time inside map area
+mobs_animal.kitten.spawn.active_object_count (Number of kittens in the same place) int 1 1
+
+
+
+
+# Enable or disable the natural spawning of the panda mob
+mobs_animal.panda.spawn.enabled (Enable panda spawning) bool true
+
+# List of nodenames that the panda mob can spawn on top of
+mobs_animal.panda.spawn.on (Nodes the panda will spawn on) string group:soil,group:stone
+
+# List of nodenames that the panda mob can spawn beside
+mobs_animal.panda.spawn.near (Nodes the panda will spawn near) string air
+
+# Interval in seconds that specifies when the panda mob will try to spawn
+mobs_animal.panda.spawn.interval (Time between panda spawning) int 30 1
+
+# Inverted chance for an panda to spawn on a given node
+mobs_animal.panda.spawn.chance (Rarity of panda spawning) int 5000 1
+
+# The minimum light level the panda mob can spawn at
+mobs_animal.panda.spawn.min_light (Min. light level for panda spawning) int 0 0
+
+# The maximum light level the panda mob can spawn at
+mobs_animal.panda.spawn.max_light (Max. light level for panda spawning) int 15 0
+
+# The minimum height the panda mob can spawn at
+mobs_animal.panda.spawn.min_height (Min. world height for panda spawning) int -31000 -31000 31000
+
+# The maximum height the panda mob can spawn at
+mobs_animal.panda.spawn.max_height (Max. world height for panda spawning) int 31000 -31000 31000
+
+# Number of panda mobs to spawn at one time inside map area
+mobs_animal.panda.spawn.active_object_count (Number of pandas in the same place) int 1 1
+
+
+
+
+# Enable or disable the natural spawning of the penguin mob
+mobs_animal.penguin.spawn.enabled (Enable penguin spawning) bool true
+
+# List of nodenames that the penguin mob can spawn on top of
+mobs_animal.penguin.spawn.on (Nodes the penguin will spawn on) string group:soil,group:stone
+
+# List of nodenames that the penguin mob can spawn beside
+mobs_animal.penguin.spawn.near (Nodes the penguin will spawn near) string air
+
+# Interval in seconds that specifies when the penguin mob will try to spawn
+mobs_animal.penguin.spawn.interval (Time between penguin spawning) int 30 1
+
+# Inverted chance for an penguin to spawn on a given node
+mobs_animal.penguin.spawn.chance (Rarity of penguin spawning) int 5000 1
+
+# The minimum light level the penguin mob can spawn at
+mobs_animal.penguin.spawn.min_light (Min. light level for penguin spawning) int 0 0
+
+# The maximum light level the penguin mob can spawn at
+mobs_animal.penguin.spawn.max_light (Max. light level for penguin spawning) int 15 0
+
+# The minimum height the penguin mob can spawn at
+mobs_animal.penguin.spawn.min_height (Min. world height for penguin spawning) int -31000 -31000 31000
+
+# The maximum height the penguin mob can spawn at
+mobs_animal.penguin.spawn.max_height (Max. world height for penguin spawning) int 31000 -31000 31000
+
+# Number of penguin mobs to spawn at one time inside map area
+mobs_animal.penguin.spawn.active_object_count (Number of penguins in the same place) int 1 1
+
+
+
+
+
+# Enable or disable the natural spawning of the rat mob
+mobs_animal.rat.spawn.enabled (Enable rat spawning) bool true
+
+# List of nodenames that the rat mob can spawn on top of
+mobs_animal.rat.spawn.on (Nodes the rat will spawn on) string group:soil,group:stone
+
+# List of nodenames that the rat mob can spawn beside
+mobs_animal.rat.spawn.near (Nodes the rat will spawn near) string air
+
+# Interval in seconds that specifies when the rat mob will try to spawn
+mobs_animal.rat.spawn.interval (Time between rat spawning) int 30 1
+
+# Inverted chance for an rat to spawn on a given node
+mobs_animal.rat.spawn.chance (Rarity of rat spawning) int 5000 1
+
+# The minimum light level the rat mob can spawn at
+mobs_animal.rat.spawn.min_light (Min. light level for rat spawning) int 0 0
+
+# The maximum light level the rat mob can spawn at
+mobs_animal.rat.spawn.max_light (Max. light level for rat spawning) int 15 0
+
+# The minimum height the rat mob can spawn at
+mobs_animal.rat.spawn.min_height (Min. world height for rat spawning) int -31000 -31000 31000
+
+# The maximum height the rat mob can spawn at
+mobs_animal.rat.spawn.max_height (Max. world height for rat spawning) int 31000 -31000 31000
+
+# Number of rat mobs to spawn at one time inside map area
+mobs_animal.rat.spawn.active_object_count (Number of rats in the same place) int 1 1
+
+
+
+
+# Enable or disable the natural spawning of the sheep_white mob
+mobs_animal.sheep_white.spawn.enabled (Enable sheep_white spawning) bool true
+
+# List of nodenames that the sheep_white mob can spawn on top of
+mobs_animal.sheep_white.spawn.on (Nodes the sheep_white will spawn on) string group:soil,group:stone
+
+# List of nodenames that the sheep_white mob can spawn beside
+mobs_animal.sheep_white.spawn.near (Nodes the sheep_white will spawn near) string air
+
+# Interval in seconds that specifies when the sheep_white mob will try to spawn
+mobs_animal.sheep_white.spawn.interval (Time between sheep_white spawning) int 30 1
+
+# Inverted chance for an sheep_white to spawn on a given node
+mobs_animal.sheep_white.spawn.chance (Rarity of sheep_white spawning) int 5000 1
+
+# The minimum light level the sheep_white mob can spawn at
+mobs_animal.sheep_white.spawn.min_light (Min. light level for sheep_white spawning) int 0 0
+
+# The maximum light level the sheep_white mob can spawn at
+mobs_animal.sheep_white.spawn.max_light (Max. light level for sheep_white spawning) int 15 0
+
+# The minimum height the sheep_white mob can spawn at
+mobs_animal.sheep_white.spawn.min_height (Min. world height for sheep_white spawning) int -31000 -31000 31000
+
+# The maximum height the sheep_white mob can spawn at
+mobs_animal.sheep_white.spawn.max_height (Max. world height for sheep_white spawning) int 31000 -31000 31000
+
+# Number of sheep_white mobs to spawn at one time inside map area
+mobs_animal.sheep_white.spawn.active_object_count (Number of sheep_whites in the same place) int 1 1
+
+
+
+
+# Enable or disable the natural spawning of the pumba mob
+mobs_animal.pumba.spawn.enabled (Enable warthog spawning) bool true
+
+# List of nodenames that the pumba mob can spawn on top of
+mobs_animal.pumba.spawn.on (Nodes the warthog will spawn on) string group:soil,group:stone
+
+# List of nodenames that the pumba mob can spawn beside
+mobs_animal.pumba.spawn.near (Nodes the warthog will spawn near) string air
+
+# Interval in seconds that specifies when the pumba mob will try to spawn
+mobs_animal.pumba.spawn.interval (Time between warthog spawning) int 30 1
+
+# Inverted chance for an warthog to spawn on a given node
+mobs_animal.pumba.spawn.chance (Rarity of warthog spawning) int 5000 1
+
+# The minimum light level the pumba mob can spawn at
+mobs_animal.pumba.spawn.min_light (Min. light level for warthog spawning) int 0 0
+
+# The maximum light level the pumba mob can spawn at
+mobs_animal.pumba.spawn.max_light (Max. light level for warthog spawning) int 15 0
+
+# The minimum height the pumba mob can spawn at
+mobs_animal.pumba.spawn.min_height (Min. world height for warthog spawning) int -31000 -31000 31000
+
+# The maximum height the pumba mob can spawn at
+mobs_animal.pumba.spawn.max_height (Max. world height for warthog spawning) int 31000 -31000 31000
+
+# Number of pumba mobs to spawn at one time inside map area
+mobs_animal.pumba.spawn.active_object_count (Number of warthogs in the same place) int 1 1

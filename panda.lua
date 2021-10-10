@@ -68,19 +68,4 @@ stepheight = 0.6,
 	end,
 })
 
-if minetest.get_modpath("ethereal") and not mobs.custom_spawn_animal then
-
-	mobs:spawn({
-		name = "mobs_animal:panda",
-		nodes = {"ethereal:bamboo_dirt"},
-		neighbors = {"group:grass"},
-		min_light = 14,
-		interval = 60,
-		chance = 8000, -- 15000
-		min_height = 10,
-		max_height = 80,
-		day_toggle = true,
-	})
-end
-
 mobs:register_egg("mobs_animal:panda", S("Panda"), "mobs_panda_inv.png")

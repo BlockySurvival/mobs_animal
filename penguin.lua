@@ -60,17 +60,4 @@ stepheight = 0.6,
 	end,
 })
 
-if not mobs.custom_spawn_animal then
-mobs:spawn({
-	name = "mobs_animal:penguin",
-	nodes = {"default:snowblock"},
-	min_light = 14,
-	interval = 60,
-	chance = 20000,
-	min_height = 0,
-	max_height = 200,
-	day_toggle = true,
-})
-end
-
 mobs:register_egg("mobs_animal:penguin", S("Penguin"), "mobs_penguin_inv.png")
