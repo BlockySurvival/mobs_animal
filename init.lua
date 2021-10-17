@@ -7,6 +7,151 @@ local S = minetest.get_translator and minetest.get_translator("mobs_animal") or
 
 mobs.intllib = S
 
+
+local mod_config = config.settings_model('mobs_animal', {
+	bee = {
+		spawn = {
+			enabled = config.types.boolean(true),
+			on = config.types.list({"group:flower"}),
+			near = config.types.list({ "air" }),
+			interval = config.types.int(60, { min=1 }),
+			chance = config.types.int(7000, { min=1 }),
+			min_light = config.types.int(14, { min=0 }),
+			max_light = config.types.int(15, { min=0 }),
+			min_height = config.types.int(3, { min=-31000, max=31000 }),
+			max_height = config.types.int(200, { min=-31000, max=31000 }),
+			active_object_count = config.types.int(1, { min=1 }),
+		}
+	},
+	bunny = {
+		spawn = {
+			enabled = config.types.boolean(true),
+			on = config.types.list({ "default:dirt_with_grass" }),
+			near = config.types.list({"group:grass"}),
+			interval = config.types.int(60, { min=1 }),
+			chance = config.types.int(8000, { min=1 }),
+			min_light = config.types.int(14, { min=0 }),
+			max_light = config.types.int(15, { min=0 }),
+			min_height = config.types.int(5, { min=-31000, max=31000 }),
+			max_height = config.types.int(200, { min=-31000, max=31000 }),
+			active_object_count = config.types.int(1, { min=1 }),
+		}
+	},
+	chicken = {
+		spawn = {
+			enabled = config.types.boolean(true),
+			on = config.types.list({"default:dirt_with_grass"}),
+			near = config.types.list({"group:grass"}),
+			interval = config.types.int(60, { min=1 }),
+			chance = config.types.int(8000, { min=1 }),
+			min_light = config.types.int(14, { min=0 }),
+			max_light = config.types.int(15, { min=0 }),
+			min_height = config.types.int(5, { min=-31000, max=31000 }),
+			max_height = config.types.int(200, { min=-31000, max=31000 }),
+			active_object_count = config.types.int(1, { min=1 }),
+		}
+	},
+	cow = {
+		spawn = {
+			enabled = config.types.boolean(true),
+			on = config.types.list({"default:dirt_with_grass", "ethereal:green_dirt"}),
+			near = config.types.list({"group:grass"}),
+			interval = config.types.int(60, { min=1 }),
+			chance = config.types.int(8000, { min=1 }),
+			min_light = config.types.int(14, { min=0 }),
+			max_light = config.types.int(15, { min=0 }),
+			min_height = config.types.int(5, { min=-31000, max=31000 }),
+			max_height = config.types.int(200, { min=-31000, max=31000 }),
+			active_object_count = config.types.int(1, { min=1 }),
+		}
+	},
+	kitten = {
+		spawn = {
+			enabled = config.types.boolean(true),
+			on = config.types.list({ "default:dirt_with_grass" }),
+			near = config.types.list({ "group:grass" }),
+			interval = config.types.int(60, { min=1 }),
+			chance = config.types.int(10000, { min=1 }),
+			min_light = config.types.int(14, { min=0 }),
+			max_light = config.types.int(15, { min=0 }),
+			min_height = config.types.int(5, { min=-31000, max=31000 }),
+			max_height = config.types.int(50, { min=-31000, max=31000 }),
+			active_object_count = config.types.int(1, { min=1 }),
+		}
+	},
+	panda = {
+		spawn = {
+			enabled = config.types.boolean(true),
+			on = config.types.list({"ethereal:bamboo_dirt"}),
+			near = config.types.list({"group:grass"}),
+			interval = config.types.int(60, { min=1 }),
+			chance = config.types.int(8000, { min=1 }),
+			min_light = config.types.int(14, { min=0 }),
+			max_light = config.types.int(15, { min=0 }),
+			min_height = config.types.int(10, { min=-31000, max=31000 }),
+			max_height = config.types.int(80, { min=-31000, max=31000 }),
+			active_object_count = config.types.int(1, { min=1 }),
+		}
+	},
+	penguin = {
+		spawn = {
+			enabled = config.types.boolean(true),
+			on = config.types.list({"default:snowblock"}),
+			near = config.types.list({ "air" }),
+			interval = config.types.int(60, { min=1 }),
+			chance = config.types.int(20000, { min=1 }),
+			min_light = config.types.int(14, { min=0 }),
+			max_light = config.types.int(15, { min=0 }),
+			min_height = config.types.int(0, { min=-31000, max=31000 }),
+			max_height = config.types.int(200, { min=-31000, max=31000 }),
+			active_object_count = config.types.int(1, { min=1 }),
+		}
+	},
+	rat = {
+		spawn = {
+			enabled = config.types.boolean(true),
+			on = config.types.list({"default:stone"}),
+			near = config.types.list({ "air" }),
+			interval = config.types.int(60, { min=1 }),
+			chance = config.types.int(8000, { min=1 }),
+			min_light = config.types.int(3, { min=0 }),
+			max_light = config.types.int(9, { min=0 }),
+			min_height = config.types.int(-31000, { min=-31000, max=31000 }),
+			max_height = config.types.int(0, { min=-31000, max=31000 }),
+			active_object_count = config.types.int(1, { min=1 }),
+		}
+	},
+	sheep_white = {
+		spawn = {
+			enabled = config.types.boolean(true),
+			on = config.types.list({"default:dirt_with_grass", "ethereal:green_dirt"}),
+			near = config.types.list({"group:grass"}),
+			interval = config.types.int(60, { min=1 }),
+			chance = config.types.int(8000, { min=1 }),
+			min_light = config.types.int(14, { min=0 }),
+			max_light = config.types.int(15, { min=0 }),
+			min_height = config.types.int(0, { min=-31000, max=31000 }),
+			max_height = config.types.int(200, { min=-31000, max=31000 }),
+			active_object_count = config.types.int(1, { min=1 }),
+		}
+	},
+	pumba = {
+		spawn = {
+			enabled = config.types.boolean(true),
+			on = config.types.list({"default:dirt_with_dry_grass", "default:dry_dirt_with_dry_grass"}),
+			near = config.types.list({"group:dry_grass"}),
+			interval = config.types.int(60, { min=1 }),
+			chance = config.types.int(8000, { min=1 }),
+			min_light = config.types.int(14, { min=0 }),
+			max_light = config.types.int(15, { min=0 }),
+			min_height = config.types.int(0, { min=-31000, max=31000 }),
+			max_height = config.types.int(200, { min=-31000, max=31000 }),
+			active_object_count = config.types.int(1, { min=1 }),
+		}
+	}
+})
+
+
 -- Animals
 dofile(path .. "chicken.lua") -- JKmurray
 dofile(path .. "cow.lua") -- KrupnoPavel
@@ -23,204 +168,166 @@ dofile(path .. "panda.lua") -- AspireMint
 dofile(path .. "lucky_block.lua")
 
 
+-- Configurable mob spawning
+if mod_config.bee.spawn.enabled then
+	mobs:spawn_specific(
+		"mobs_animal:bee",
+		mod_config.bee.spawn.on,
+		mod_config.bee.spawn.near,
+		mod_config.bee.spawn.min_light,
+		mod_config.bee.spawn.max_light,
+		mod_config.bee.spawn.interval,
+		mod_config.bee.spawn.chance,
+		mod_config.bee.spawn.active_object_count,
+		mod_config.bee.spawn.min_height,
+		mod_config.bee.spawn.max_height,
+		true
+	)
+end
+
+if mod_config.bunny.spawn.enabled then
+	mobs:spawn_specific(
+		"mobs_animal:bunny",
+		mod_config.bunny.spawn.on,
+		mod_config.bunny.spawn.near,
+		mod_config.bunny.spawn.min_light,
+		mod_config.bunny.spawn.max_light,
+		mod_config.bunny.spawn.interval,
+		mod_config.bunny.spawn.chance,
+		mod_config.bunny.spawn.active_object_count,
+		mod_config.bunny.spawn.min_height,
+		mod_config.bunny.spawn.max_height,
+		true
+	)
+end
+
+if mod_config.chicken.spawn.enabled then
+	mobs:spawn_specific(
+		"mobs_animal:chicken",
+		mod_config.chicken.spawn.on,
+		mod_config.chicken.spawn.near,
+		mod_config.chicken.spawn.min_light,
+		mod_config.chicken.spawn.max_light,
+		mod_config.chicken.spawn.interval,
+		mod_config.chicken.spawn.chance,
+		mod_config.chicken.spawn.active_object_count,
+		mod_config.chicken.spawn.min_height,
+		mod_config.chicken.spawn.max_height,
+		true
+	)
+end
+
+if mod_config.cow.spawn.enabled then
+	mobs:spawn_specific(
+		"mobs_animal:cow",
+		mod_config.cow.spawn.on,
+		mod_config.cow.spawn.near,
+		mod_config.cow.spawn.min_light,
+		mod_config.cow.spawn.max_light,
+		mod_config.cow.spawn.interval,
+		mod_config.cow.spawn.chance,
+		mod_config.cow.spawn.active_object_count,
+		mod_config.cow.spawn.min_height,
+		mod_config.cow.spawn.max_height,
+		true
+	)
+end
+
+if mod_config.kitten.spawn.enabled then
+	mobs:spawn_specific(
+		"mobs_animal:kitten",
+		mod_config.kitten.spawn.on,
+		mod_config.kitten.spawn.near,
+		mod_config.kitten.spawn.min_light,
+		mod_config.kitten.spawn.max_light,
+		mod_config.kitten.spawn.interval,
+		mod_config.kitten.spawn.chance,
+		mod_config.kitten.spawn.active_object_count,
+		mod_config.kitten.spawn.min_height,
+		mod_config.kitten.spawn.max_height,
+		true
+	)
+end
+
+if mod_config.panda.spawn.enabled then
+	mobs:spawn_specific(
+		"mobs_animal:panda",
+		mod_config.panda.spawn.on,
+		mod_config.panda.spawn.near,
+		mod_config.panda.spawn.min_light,
+		mod_config.panda.spawn.max_light,
+		mod_config.panda.spawn.interval,
+		mod_config.panda.spawn.chance,
+		mod_config.panda.spawn.active_object_count,
+		mod_config.panda.spawn.min_height,
+		mod_config.panda.spawn.max_height,
+		true
+	)
+end
+
+if mod_config.penguin.spawn.enabled then
+	mobs:spawn_specific(
+		"mobs_animal:penguin",
+		mod_config.penguin.spawn.on,
+		mod_config.penguin.spawn.near,
+		mod_config.penguin.spawn.min_light,
+		mod_config.penguin.spawn.max_light,
+		mod_config.penguin.spawn.interval,
+		mod_config.penguin.spawn.chance,
+		mod_config.penguin.spawn.active_object_count,
+		mod_config.penguin.spawn.min_height,
+		mod_config.penguin.spawn.max_height,
+		true
+	)
+end
+
+if mod_config.rat.spawn.enabled then
+	mobs:spawn_specific(
+		"mobs_animal:rat",
+		mod_config.rat.spawn.on,
+		mod_config.rat.spawn.near,
+		mod_config.rat.spawn.min_light,
+		mod_config.rat.spawn.max_light,
+		mod_config.rat.spawn.interval,
+		mod_config.rat.spawn.chance,
+		mod_config.rat.spawn.active_object_count,
+		mod_config.rat.spawn.min_height,
+		mod_config.rat.spawn.max_height
+	)
+end
+
+if mod_config.sheep_white.spawn.enabled then
+	mobs:spawn_specific(
+		"mobs_animal:sheep_white",
+		mod_config.sheep_white.spawn.on,
+		mod_config.sheep_white.spawn.near,
+		mod_config.sheep_white.spawn.min_light,
+		mod_config.sheep_white.spawn.max_light,
+		mod_config.sheep_white.spawn.interval,
+		mod_config.sheep_white.spawn.chance,
+		mod_config.sheep_white.spawn.active_object_count,
+		mod_config.sheep_white.spawn.min_height,
+		mod_config.sheep_white.spawn.max_height,
+		true
+	)
+end
+
+if mod_config.pumba.spawn.enabled then
+	mobs:spawn_specific(
+		"mobs_animal:pumba",
+		mod_config.pumba.spawn.on,
+		mod_config.pumba.spawn.near,
+		mod_config.pumba.spawn.min_light,
+		mod_config.pumba.spawn.max_light,
+		mod_config.pumba.spawn.interval,
+		mod_config.pumba.spawn.chance,
+		mod_config.pumba.spawn.active_object_count,
+		mod_config.pumba.spawn.min_height,
+		mod_config.pumba.spawn.max_height,
+		true
+	)
+end
+
 print (S("[MOD] Mobs Redo Animals loaded"))
 
-
-
-if not mobs.custom_spawn_animal then
-mobs:spawn({
-	name = "mobs_animal:bee",
-	nodes = {"group:flower"},
-	min_light = 14,
-	interval = 60,
-	chance = 7000,
-	min_height = 3,
-	max_height = 200,
-	day_toggle = true,
-})
-end
-
-
-
-local spawn_on = "default:dirt_with_grass"
-
-if minetest.get_modpath("ethereal") then
-	spawn_on = "ethereal:prairie_dirt"
-end
-
-if not mobs.custom_spawn_animal then
-mobs:spawn({
-	name = "mobs_animal:bunny",
-	nodes = {spawn_on},
-	neighbors = {"group:grass"},
-	min_light = 14,
-	interval = 60,
-	chance = 8000, -- 15000
-	min_height = 5,
-	max_height = 200,
-	day_toggle = true,
-})
-end
-
-
-
-
-local spawn_on = {"default:dirt_with_grass"}
-
-if minetest.get_modpath("ethereal") then
-	spawn_on = {"ethereal:bamboo_dirt", "ethereal:prairie_dirt"}
-end
-
-
-if not mobs.custom_spawn_animal then
-mobs:spawn({
-	name = "mobs_animal:chicken",
-	nodes = spawn_on,
-	neighbors = {"group:grass"},
-	min_light = 14,
-	interval = 60,
-	chance = 8000, -- 15000
-	min_height = 5,
-	max_height = 200,
-	day_toggle = true,
-})
-end
-
-
-
-
-
-if not mobs.custom_spawn_animal then
-mobs:spawn({
-	name = "mobs_animal:cow",
-	nodes = {"default:dirt_with_grass", "ethereal:green_dirt"},
-	neighbors = {"group:grass"},
-	min_light = 14,
-	interval = 60,
-	chance = 8000, -- 15000
-	min_height = 5,
-	max_height = 200,
-	day_toggle = true,
-})
-end
-
-
-
-
-
-local spawn_on = "default:dirt_with_grass"
-
-if minetest.get_modpath("ethereal") then
-	spawn_on = "ethereal:grove_dirt"
-end
-
-if not mobs.custom_spawn_animal then
-mobs:spawn({
-	name = "mobs_animal:kitten",
-	nodes = {spawn_on},
-	neighbors = {"group:grass"},
-	min_light = 14,
-	interval = 60,
-	chance = 10000, -- 22000
-	min_height = 5,
-	max_height = 50,
-	day_toggle = true,
-})
-end
-
-
-
-
-if minetest.get_modpath("ethereal") and not mobs.custom_spawn_animal then
-
-	mobs:spawn({
-		name = "mobs_animal:panda",
-		nodes = {"ethereal:bamboo_dirt"},
-		neighbors = {"group:grass"},
-		min_light = 14,
-		interval = 60,
-		chance = 8000, -- 15000
-		min_height = 10,
-		max_height = 80,
-		day_toggle = true,
-	})
-end
-
-
-
-if not mobs.custom_spawn_animal then
-mobs:spawn({
-	name = "mobs_animal:penguin",
-	nodes = {"default:snowblock"},
-	min_light = 14,
-	interval = 60,
-	chance = 20000,
-	min_height = 0,
-	max_height = 200,
-	day_toggle = true,
-})
-end
-
-
-
-if not mobs.custom_spawn_animal then
-mobs:spawn({
-	name = "mobs_animal:rat",
-	nodes = {"default:stone"},
-	min_light = 3,
-	max_light = 9,
-	interval = 60,
-	chance = 8000,
-	max_height = 0,
---	on_spawn = rat_spawn,
-})
-end
-
-
-
-
-
-
-if not mobs.custom_spawn_animal then
-mobs:spawn({
-	name = "mobs_animal:sheep_white",
-	nodes = {"default:dirt_with_grass", "ethereal:green_dirt"},
-	neighbors = {"group:grass"},
-	min_light = 14,
-	interval = 60,
-	chance = 8000, -- 15000
-	min_height = 0,
-	max_height = 200,
-	day_toggle = true,
-})
-end
-
-
-
-
-local spawn_on = {"default:dirt_with_grass"}
-local spawn_by = {"group:grass"}
-
-if minetest.get_mapgen_setting("mg_name") ~= "v6" then
-	spawn_on = {"default:dirt_with_dry_grass", "default:dry_dirt_with_dry_grass"}
-	spawn_by = {"group:dry_grass"}
-end
-
-if minetest.get_modpath("ethereal") then
-	spawn_on = {"ethereal:mushroom_dirt"}
-	spawn_by = {"flowers:mushroom_brown", "flowers:mushroom_red"}
-end
-
-if not mobs.custom_spawn_animal then
-mobs:spawn({
-	name = "mobs_animal:pumba",
-	nodes = spawn_on,
-	neighbors = spawn_by,
-	min_light = 14,
-	interval = 60,
-	chance = 8000, -- 15000
-	min_height = 0,
-	max_height = 200,
-	day_toggle = true,
-})
-end
+dofile(path .. "test.lua")
