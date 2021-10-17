@@ -151,9 +151,9 @@ minetest.register_craft({
 
 minetest.register_craft({
 	output = "mobs:leather",
-	type = "shapeless",
+--	type = "shapeless",
 	recipe = {
-		"mobs:rabbit_hide", "mobs:rabbit_hide",
-		"mobs:rabbit_hide", "mobs:rabbit_hide"
+		{"mobs:rabbit_hide", "mobs:rabbit_hide"},
+		{"mobs:rabbit_hide", "mobs:rabbit_hide"}
 	}
 })
