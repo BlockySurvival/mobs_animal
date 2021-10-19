@@ -1,4 +1,6 @@
-default
 mobs
-intllib?
+config
+default?
 lucky_block?
+intllib?
+test?

@@ -50,6 +50,12 @@ mobs:register_mob("mobs_animal:pumba", {
 		walk_end = 100,
 		punch_start = 70,
 		punch_end = 100,
+
+		die_start = 1, -- we dont have a specific death animation so we will
+		die_end = 2, --   re-use 2 standing frames at a speed of 1 fps and
+		die_speed = 1, -- have mob rotate when dying.
+		die_loop = false,
+		die_rotate = true,
 	},
 	on_rightclick = function(self, clicker)
 
@@ -57,31 +63,6 @@ mobs:register_mob("mobs_animal:pumba", {
 		if mobs:protect(self, clicker) then return end
 		if mobs:capture_mob(self, clicker, 0, 5, 50, false, nil) then return end
 	end,
-})
-
-local spawn_on = {"default:dirt_with_grass"}
-local spawn_by = {"group:grass"}
-
-if minetest.get_mapgen_setting("mg_name") ~= "v6" then
-	spawn_on = {"default:dirt_with_dry_grass"}
-	spawn_by = {"group:dry_grass"}
-end
-
-if minetest.get_modpath("ethereal") then
-	spawn_on = {"ethereal:mushroom_dirt"}
-	spawn_by = {"flowers:mushroom_brown", "flowers:mushroom_brown"}
-end
-
-mobs:spawn({
-	name = "mobs_animal:pumba",
-	nodes = spawn_on,
-	neighbors = spawn_by,
-	min_light = 14,
-	interval = 60,
-	chance = 8000, -- 15000
-	min_height = 0,
-	max_height = 200,
-	day_toggle = true,
 })
 
 

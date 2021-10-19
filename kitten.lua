@@ -52,7 +52,10 @@ stepheight = 1.1,
 		stoodup_start = 0,
 		stoodup_end = 0,
 	},
-	follow = {"mobs_animal:rat", "ethereal:fish_raw", "mobs_fish:clownfish", "mobs_fish:tropical"},
+	follow = {
+		"mobs_animal:rat", "group:food_fish_raw",
+		"mobs_fish:tropical", "xocean:fish_edible"
+	},
 	view_range = 8,
 
 	on_rightclick = function(self, clicker)
@@ -106,25 +109,6 @@ stepheight = 1.1,
 })
 
 
-local spawn_on = "default:dirt_with_grass"
-
-if minetest.get_modpath("ethereal") then
-	spawn_on = "ethereal:grove_dirt"
-end
-
-mobs:spawn({
-	name = "mobs_animal:kitten",
-	nodes = {spawn_on},
-	neighbors = {"group:grass"},
-	min_light = 14,
-	interval = 60,
-	chance = 10000, -- 22000
-	min_height = 5,
-	max_height = 50,
-	day_toggle = true,
-})
-
-
 mobs:register_egg("mobs_animal:kitten", S("Kitten"), "mobs_kitten_inv.png", 0)
 
 
@@ -151,7 +135,8 @@ minetest.register_craftitem(":mobs:hairball", {
 		local newpos = {x = pos.x + dir.x, y = pos.y + dir.y + 1.5, z = pos.z + dir.z}
 		local item = hairball_items[math.random(1, #hairball_items)]
 
-		if item ~= "" then
+		if item ~= ""
+		and minetest.registered_items[item] then
 			minetest.add_item(newpos, {name = item})
 		end
 

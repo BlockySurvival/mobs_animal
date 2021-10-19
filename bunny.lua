@@ -107,25 +107,6 @@ stepheight = 0.6,
 })
 
 
-local spawn_on = "default:dirt_with_grass"
-
-if minetest.get_modpath("ethereal") then
-	spawn_on = "ethereal:prairie_dirt"
-end
-
-mobs:spawn({
-	name = "mobs_animal:bunny",
-	nodes = {spawn_on},
-	neighbors = {"group:grass"},
-	min_light = 14,
-	interval = 60,
-	chance = 8000, -- 15000
-	min_height = 5,
-	max_height = 200,
-	day_toggle = true,
-})
-
-
 mobs:register_egg("mobs_animal:bunny", S("Bunny"), "mobs_bunny_inv.png", 0)
 
 
@@ -159,7 +140,7 @@ minetest.register_craft({
 minetest.register_craftitem(":mobs:rabbit_hide", {
 	description = S("Rabbit Hide"),
 	inventory_image = "mobs_rabbit_hide.png",
-	groups = {flammable = 2},
+	groups = {flammable = 2, pelt = 1},
 })
 
 minetest.register_craft({
@@ -170,9 +151,9 @@ minetest.register_craft({
 
 minetest.register_craft({
 	output = "mobs:leather",
-	type = "shapeless",
+--	type = "shapeless",
 	recipe = {
-		"mobs:rabbit_hide", "mobs:rabbit_hide",
-		"mobs:rabbit_hide", "mobs:rabbit_hide"
+		{"mobs:rabbit_hide", "mobs:rabbit_hide"},
+		{"mobs:rabbit_hide", "mobs:rabbit_hide"}
 	}
 })

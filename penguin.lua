@@ -46,8 +46,8 @@ stepheight = 0.6,
 	fly_in = {"default:water_source", "default:water_flowing"},
 	floats = 0,
 	follow = {
-		"ethereal:fish_raw", "mobs_fish:clownfish", "mobs_fish:tropical",
-		"mobs_fish:clownfish_set", "mobs_fish:tropical_set"
+		"group:food_fish_raw", "mobs_fish:clownfish", "mobs_fish:tropical",
+		"mobs_fish:clownfish_set", "mobs_fish:tropical_set", "xocean:fish_edible"
 	},
 	view_range = 5,
 
@@ -59,18 +59,5 @@ stepheight = 0.6,
 		if mobs:capture_mob(self, clicker, 5, 50, 80, false, nil) then return end
 	end,
 })
-
-
-mobs:spawn({
-	name = "mobs_animal:penguin",
-	nodes = {"default:snowblock"},
-	min_light = 14,
-	interval = 60,
-	chance = 20000,
-	min_height = 0,
-	max_height = 200,
-	day_toggle = true,
-})
-
 
 mobs:register_egg("mobs_animal:penguin", S("Penguin"), "mobs_penguin_inv.png")

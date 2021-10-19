@@ -58,13 +58,17 @@ mobs:register_mob("mobs_animal:cow", {
 		die_speed = 10,
 		die_loop = false,
 	},
-	follow = {"farming:wheat", "default:grass_1"},
+	follow = {
+		"farming:wheat", "default:grass_1", "farming:barley",
+		"farming:oat", "farming:rye"
+	},
 	view_range = 8,
 	replace_rate = 10,
 	replace_what = {
 		{"group:grass", "air", 0},
 		{"default:dirt_with_grass", "default:dirt", -1}
 	},
+--	stay_near = {{"farming:straw", "group:grass"}, 10},
 	fear_height = 2,
 	on_rightclick = function(self, clicker)
 
@@ -117,6 +121,7 @@ mobs:register_mob("mobs_animal:cow", {
 			return
 		end
 	end,
+
 	on_replace = function(self, pos, oldnode, newnode)
 
 		self.food = (self.food or 0) + 1
@@ -127,19 +132,6 @@ mobs:register_mob("mobs_animal:cow", {
 			self.gotten = false
 		end
 	end,
-})
-
-
-mobs:spawn({
-	name = "mobs_animal:cow",
-	nodes = {"default:dirt_with_grass", "ethereal:green_dirt"},
-	neighbors = {"group:grass"},
-	min_light = 14,
-	interval = 60,
-	chance = 8000, -- 15000
-	min_height = 5,
-	max_height = 200,
-	day_toggle = true,
 })
 
 
@@ -155,7 +147,7 @@ minetest.register_craftitem(":mobs:bucket_milk", {
 	inventory_image = "mobs_bucket_milk.png",
 	stack_max = 1,
 	on_use = minetest.item_eat(8, "bucket:bucket_empty"),
-	groups = {food_milk = 1, flammable = 3},
+	groups = {food_milk = 1, flammable = 3, drink = 1},
 })
 
 -- glass of milk
@@ -163,29 +155,31 @@ minetest.register_craftitem(":mobs:glass_milk", {
 	description = S("Glass of Milk"),
 	inventory_image = "mobs_glass_milk.png",
 	on_use = minetest.item_eat(2, "vessels:drinking_glass"),
-	groups = {food_milk_glass = 1, flammable = 3, vessel = 1},
+	groups = {food_milk_glass = 1, flammable = 3, vessel = 1, drink = 1},
 })
 
 minetest.register_craft({
-	type = "shapeless",
+--	type = "shapeless",
 	output = "mobs:glass_milk 4",
 	recipe = {
-		"vessels:drinking_glass", "vessels:drinking_glass",
-		"vessels:drinking_glass", "vessels:drinking_glass",
-		"mobs:bucket_milk"
+		{"vessels:drinking_glass", "vessels:drinking_glass"},
+		{"vessels:drinking_glass", "vessels:drinking_glass"},
+		{"mobs:bucket_milk", ""}
 	},
 	replacements = { {"mobs:bucket_milk", "bucket:bucket_empty"} }
 })
 
 minetest.register_craft({
-	type = "shapeless",
+--	type = "shapeless",
 	output = "mobs:bucket_milk",
 	recipe = {
-		"mobs:glass_milk", "mobs:glass_milk",
-		"mobs:glass_milk", "mobs:glass_milk",
-		"bucket:bucket_empty"
+		{"group:food_milk_glass", "group:food_milk_glass"},
+		{"group:food_milk_glass", "group:food_milk_glass"},
+		{"bucket:bucket_empty", ""}
 	},
-	replacements = { {"mobs:glass_milk", "vessels:drinking_glass 4"} }
+	replacements = {
+		{"group:food_milk_glass", "vessels:drinking_glass 4"}
+	}
 })
 
 
@@ -194,7 +188,7 @@ minetest.register_craftitem(":mobs:butter", {
 	description = S("Butter"),
 	inventory_image = "mobs_butter.png",
 	on_use = minetest.item_eat(1),
-	groups = {food_butter = 1, flammable = 2},
+	groups = {food_butter = 1, flammable = 2}
 })
 
 if minetest.get_modpath("farming") and farming and farming.mod then
@@ -234,16 +228,16 @@ minetest.register_node(":mobs:cheeseblock", {
 	description = S("Cheese Block"),
 	tiles = {"mobs_cheeseblock.png"},
 	is_ground_content = false,
-	groups = {crumbly = 3},
+	groups = {oddly_breakable_by_hand = 3},
 	sounds = default.node_sound_dirt_defaults()
 })
 
 minetest.register_craft({
 	output = "mobs:cheeseblock",
 	recipe = {
-		{"mobs:cheese", "mobs:cheese", "mobs:cheese"},
-		{"mobs:cheese", "mobs:cheese", "mobs:cheese"},
-		{"mobs:cheese", "mobs:cheese", "mobs:cheese"},
+		{"group:food_cheese", "group:food_cheese", "group:food_cheese"},
+		{"group:food_cheese", "group:food_cheese", "group:food_cheese"},
+		{"group:food_cheese", "group:food_cheese", "group:food_cheese"},
 	}
 })
 

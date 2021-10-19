@@ -60,25 +60,6 @@ stepheight = 0.6,
 })
 
 
-local function rat_spawn(self, pos)
-	self = self:get_luaentity()
-	print (self.name, pos.x, pos.y, pos.z)
-	self.hp_max = 100
-	self.health = 100
-end
-
-mobs:spawn({
-	name = "mobs_animal:rat",
-	nodes = {"default:stone"},
-	min_light = 3,
-	max_light = 9,
-	interval = 60,
-	chance = 8000,
-	max_height = 0,
---	on_spawn = rat_spawn,
-})
-
-
 mobs:register_egg("mobs_animal:rat", S("Rat"), "mobs_rat_inv.png")
 
 
@@ -90,12 +71,12 @@ minetest.register_craftitem(":mobs:rat_cooked", {
 	description = S("Cooked Rat"),
 	inventory_image = "mobs_cooked_rat.png",
 	on_use = minetest.item_eat(3),
-	groups = {food_rat = 1, flammable = 2},
+	groups = {food_rat = 1, flammable = 2}
 })
 
 minetest.register_craft({
 	type = "cooking",
 	output = "mobs:rat_cooked",
 	recipe = "mobs_animal:rat",
-	cooktime = 5,
+	cooktime = 5
 })

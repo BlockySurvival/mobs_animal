@@ -38,7 +38,7 @@ stepheight = 0.6,
 	lava_damage = 5,
 	light_damage = 0,
 	fall_damage = 0,
-	fall_speed = -8,
+	fall_speed = -4,
 	fear_height = 5,
 	animation = {
 		speed_normal = 15,
@@ -55,7 +55,10 @@ stepheight = 0.6,
 		run_end = 110,
 		run_speed = 24,
 	},
-	follow = {"farming:seed_wheat", "farming:seed_cotton"},
+	follow = {
+		"farming:seed_wheat", "farming:seed_cotton", "farming:seed_barley",
+		"farming:seed_oat", "farming:seed_rye"
+	},
 	view_range = 5,
 
 	on_rightclick = function(self, clicker)
@@ -78,7 +81,7 @@ stepheight = 0.6,
 			return
 		end
 
-		local pos = self.object:get_pos()
+		local pos = self.object:get_pos() ; if not pos then return end
 
 		minetest.add_item(pos, "mobs:egg")
 
@@ -88,25 +91,6 @@ stepheight = 0.6,
 			max_hear_distance = 5,
 		})
 	end,
-})
-
-
-local spawn_on = "default:dirt_with_grass"
-
-if minetest.get_modpath("ethereal") then
-	spawn_on = "ethereal:bamboo_dirt"
-end
-
-mobs:spawn({
-	name = "mobs_animal:chicken",
-	nodes = {spawn_on},
-	neighbors = {"group:grass"},
-	min_light = 14,
-	interval = 60,
-	chance = 8000, -- 15000
-	min_height = 5,
-	max_height = 200,
-	day_toggle = true,
 })
 
 
@@ -132,7 +116,7 @@ mobs:register_arrow("mobs_animal:egg_entity", {
 	end,
 
 	hit_mob = function(self, player)
-		player:punch(minetest.get_player_by_name(self.playername) or self.object, 1.0, {
+		player:punch(self.object, 1.0, {
 			full_punch_interval = 1.0,
 			damage_groups = {fleshy = 1},
 		}, nil)
@@ -207,6 +191,7 @@ local mobs_shoot_egg = function (item, player, pointed_thing)
 
 	ent.velocity = egg_VELOCITY -- needed for api internal timing
 	ent.switch = 1 -- needed so that egg doesn't despawn straight away
+	ent._is_arrow = true -- tell advanced mob protection this is an arrow
 
 	obj:setvelocity({
 		x = dir.x * egg_VELOCITY,
@@ -296,7 +281,7 @@ minetest.register_craft({
 minetest.register_craftitem(":mobs:chicken_feather", {
 	description = S("Feather"),
 	inventory_image = "mobs_chicken_feather.png",
-	groups = {flammable = 2},
+	groups = {flammable = 2, feather = 1},
 })
 
 minetest.register_craft({
